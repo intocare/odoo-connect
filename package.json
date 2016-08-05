@@ -1,0 +1,47 @@
+{
+  "name": "odoo-connect",
+  "version": "0.0.0",
+  "description": "Odoo JSON-RPC client",
+  "license": "MIT",
+  "repository": "pridiktiv/odoo-connect",
+  "author": {
+    "name": "Sam Verschueren",
+    "email": "sam.verschueren@pridiktiv.com",
+    "url": "github.com/SamVerschueren"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "clinton && xo && ava"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "keywords": [
+    "odoo",
+    "openerp",
+    "connect",
+    "json",
+    "rpc",
+    "connect",
+    "connector",
+    "adapter"
+  ],
+  "dependencies": {
+    "got": "^6.3.0",
+    "jayson": "^2.0.2",
+    "pify": "^2.3.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "clinton": "*",
+    "sinon": "^1.17.5",
+    "sinon-as-promised": "^4.0.2",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
+  }
+}

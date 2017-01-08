@@ -55,5 +55,36 @@ module.exports = test => {
 					]
 				}
 			});
+
+		const failBody = {
+			params: {
+				db: 'fail',
+				login: 'fail',
+				password: 'fail'
+			}
+		};
+
+		gotPost
+			.withArgs('foobar.com:80/web/session/authenticate', {
+				json: true,
+				headers,
+				body: JSON.stringify(failBody)
+			})
+			.resolves({
+				body: {
+					jsonrpc: '2.0',
+					id: null,
+					error: {
+						message: 'Odoo Server Error',
+						code: 200,
+						data: {
+							debug: 'Traceback ...'
+						}
+					}
+				},
+				headers: {
+					'content-type': 'application/json'
+				}
+			});
 	});
 };

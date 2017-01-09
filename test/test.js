@@ -33,3 +33,16 @@ test('connect', async t => {
 		sid: 'session_id=2ad18d37785fab31c8e9e3cb8c21f8917f48b63b'
 	});
 });
+
+test('connect failure', async t => {
+	const odoo = new Odoo({host: 'foobar.com'});
+	const error = await t.throws(odoo.connect({
+		database: 'fail',
+		username: 'fail',
+		password: 'fail'
+	}), Error, 'Odoo Server Error');
+	t.is(error.code, 200);
+	t.deepEqual(error.data, {
+		debug: 'Traceback ...'
+	});
+});

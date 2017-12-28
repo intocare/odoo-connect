@@ -39,8 +39,5 @@
     "sinon": "^1.17.5",
     "sinon-as-promised": "^4.0.2",
     "xo": "*"
-  },
-  "xo": {
-    "esnext": true
   }
 }

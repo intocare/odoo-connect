@@ -26,12 +26,6 @@ test('connect', async t => {
 			tz: 'Europe/Brussels'
 		}
 	});
-
-	t.deepEqual(client._opts, {
-		host: 'foobar.com',
-		port: 80,
-		sid: 'session_id=2ad18d37785fab31c8e9e3cb8c21f8917f48b63b'
-	});
 });
 
 test('connect failure', async t => {
